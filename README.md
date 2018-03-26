@@ -1,2 +1,2 @@
 # Volcano
-An Easy to Use Java Library
+Easy-to-use Library for Java
