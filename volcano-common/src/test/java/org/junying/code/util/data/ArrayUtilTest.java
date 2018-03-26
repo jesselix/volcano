@@ -1,7 +1,7 @@
-package org.junying.code.util;
+package org.junying.code.util.data;
 
 import org.junit.Test;
-import org.junyingli.code.util.ArrayUtil;
+import org.junyingli.code.util.data.ArrayUtil;
 
 public class ArrayUtilTest {
 
@@ -18,4 +18,6 @@ public class ArrayUtilTest {
         ArrayUtil.swap(orderedTestArray, 1, 8);
         ArrayUtil.printArray(orderedTestArray);
     }
+
+
 }

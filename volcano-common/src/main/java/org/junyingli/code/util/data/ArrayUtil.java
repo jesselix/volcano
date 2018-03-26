@@ -1,4 +1,4 @@
-package org.junyingli.code.util;
+package org.junyingli.code.util.data;
 
 public class ArrayUtil {
 
@@ -18,7 +18,7 @@ public class ArrayUtil {
         array[index2] = temp;
     }
 
-    public static void generateArrayWithRandomInt() {
+    public static void generateArrayWithRandomInt(int length) {
         System.out.println();
     }
 
