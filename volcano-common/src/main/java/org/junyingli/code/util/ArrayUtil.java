@@ -1,4 +1,4 @@
-package org.junyingli.code.util.data;
+package org.junyingli.code.util;
 
 public class ArrayUtil {
 

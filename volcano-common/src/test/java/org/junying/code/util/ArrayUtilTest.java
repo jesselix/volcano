@@ -1,7 +1,7 @@
-package org.junying.code.util.data;
+package org.junying.code.util;
 
 import org.junit.Test;
-import org.junyingli.code.util.data.ArrayUtil;
+import org.junyingli.code.util.ArrayUtil;
 
 public class ArrayUtilTest {
 
