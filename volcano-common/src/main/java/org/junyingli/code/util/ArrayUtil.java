@@ -1,5 +1,7 @@
 package org.junyingli.code.util;
 
+import java.util.Random;
+
 public class ArrayUtil {
 
     public static void printArray(int[] array) {
@@ -22,8 +24,16 @@ public class ArrayUtil {
         System.out.println();
     }
 
-    public static void shuffleArray(int[] array) {
+    public static int[] shuffleArray(int[] array) {
+        Random random = new Random();
 
+        for (int i = 0; i < array.length; i++) {
+            int p = random.nextInt(array.length);
+            swap(array, array[i], array[p]);
+        }
+
+        random = null;
+        return array;
     }
 
 }

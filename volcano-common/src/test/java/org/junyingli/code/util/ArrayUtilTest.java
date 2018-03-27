@@ -18,5 +18,11 @@ public class ArrayUtilTest {
         ArrayUtil.printArray(orderedTestArray);
     }
 
-
+    @Test
+    public void testShuffleArray() {
+        ArrayUtil.printArray(orderedTestArray);
+        System.out.println();
+        ArrayUtil.printArray(ArrayUtil.shuffleArray(orderedTestArray));
+        System.out.println();
+    }
 }
