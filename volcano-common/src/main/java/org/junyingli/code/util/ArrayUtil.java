@@ -18,9 +18,12 @@ public class ArrayUtil {
         array[index2] = temp;
     }
 
-    public static void generateArrayWithRandomInt(int length) {
+    public static void generateArrayWithRandomNumber(int length, int lowerLimit, int upperLimit) {
         System.out.println();
     }
 
+    public static void shuffleArray(int[] array) {
+
+    }
 
 }

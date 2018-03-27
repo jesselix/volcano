@@ -1,7 +1,6 @@
-package org.junying.code.util;
+package org.junyingli.code.util;
 
 import org.junit.Test;
-import org.junyingli.code.util.ArrayUtil;
 
 public class ArrayUtilTest {
 

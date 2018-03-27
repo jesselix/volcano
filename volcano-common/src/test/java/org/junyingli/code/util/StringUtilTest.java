@@ -1,4 +1,4 @@
-package org.junying.code.util;
+package org.junyingli.code.util;
 
 public class StringUtilTest {
 }
