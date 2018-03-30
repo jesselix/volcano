@@ -1,6 +1,7 @@
 package org.junyingli.code.util;
 
 import org.junit.Test;
+import org.junyingli.code.enumeration.CommonEnum;
 
 public class ArrayUtilTest {
 
@@ -24,5 +25,11 @@ public class ArrayUtilTest {
         System.out.println();
         ArrayUtil.printArray(ArrayUtil.shuffleArray(orderedTestArray));
         System.out.println();
+    }
+
+    @Test
+    public void testFindMinMax() {
+        System.out.println(ArrayUtil.findMinMax(testArray, CommonEnum.MinMax.MIN));
+        System.out.println(ArrayUtil.findMinMax(testArray, CommonEnum.MinMax.MAX));
     }
 }
