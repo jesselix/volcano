@@ -57,8 +57,6 @@ public class ArrayUtil {
 
             return  max;
         }
-
-
     }
 
 }
