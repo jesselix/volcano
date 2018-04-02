@@ -13,4 +13,8 @@ public class NumeralSystemUtil {
 
         return length;
     }
+
+    public static String intToHex(int number) {
+        return null;
+    }
 }
