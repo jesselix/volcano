@@ -8,7 +8,7 @@ public class RegexUtilTest {
     String email = "_@g.com";
     String ssn = "123456789";
     String number = "-4554";
-    String chineseId = "";
+    String chineseId = "440784199010824819";
 
     @Test
     public void testIsPhoneNumber() {
