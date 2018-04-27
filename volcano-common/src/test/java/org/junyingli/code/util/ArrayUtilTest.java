@@ -32,4 +32,10 @@ public class ArrayUtilTest {
         System.out.println(ArrayUtil.findMinMax(testArray, CommonEnum.MinMax.MIN));
         System.out.println(ArrayUtil.findMinMax(testArray, CommonEnum.MinMax.MAX));
     }
+
+    @Test
+    public void testConvertStringIntoArray() {
+        String ss = "2,33";
+        ArrayUtil.printArray(ArrayUtil.convertStringIntoArray(ss));
+    }
 }
