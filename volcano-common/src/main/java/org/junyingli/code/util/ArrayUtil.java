@@ -73,13 +73,60 @@ public class ArrayUtil {
         return array;
     }
 
-    public static int[] commonElements(ArrayList<int[]> arrayList) {
-        Set<Integer> result = new HashSet<>();
-        for (int i = 0; i < arrayList.size(); i++) {
+    public static int[] intersectionArray(int[] arr1, int[] arr2) {
+        Set<Integer> resultSet = new HashSet<>();
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
 
+        for (int i = 0; i < arr1.length; i++) {
+            set1.add(Integer.valueOf(arr1[i]));
         }
 
-        return null;
+        for (int i = 0; i < arr2.length; i++) {
+            set2.add(Integer.valueOf(arr2[i]));
+        }
+
+        resultSet.clear();
+        resultSet.addAll(set1);
+        resultSet.retainAll(set2);
+
+        int[] resultArray = new int[resultSet.size()];
+
+        int i = 0;
+        for (Integer integer : resultSet) {
+            resultArray[i] = integer.intValue();
+            i++;
+        }
+
+        return resultArray;
+    }
+
+    public static int[] unionArray(int[] arr1, int[] arr2) {
+        Set<Integer> resultSet = new HashSet<>();
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+        for (int i = 0; i < arr1.length; i++) {
+            set1.add(Integer.valueOf(arr1[i]));
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            set2.add(Integer.valueOf(arr2[i]));
+        }
+
+        resultSet.clear();
+        resultSet.addAll(set1);
+        resultSet.addAll(set2);
+
+        int[] resultArray = new int[resultSet.size()];
+
+        int i = 0;
+        for (Integer integer : resultSet) {
+            resultArray[i] = integer.intValue();
+            i++;
+        }
+
+        return resultArray;
     }
 
 }
