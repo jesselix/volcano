@@ -3,6 +3,9 @@ package org.junyingli.code.util;
 import org.junit.Test;
 import org.junyingli.code.enumeration.CommonEnum;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArrayUtilTest {
 
     private int[] testArray = {4, 9, 5, 8, 7, 0, 1, 3, 2, 6};
@@ -41,6 +44,33 @@ public class ArrayUtilTest {
 
     @Test
     public void testIntersectionAndUnionArray() {
+        int[] arr1 = {1, 3, 5, 7, 9};
+        int[] arr2 = {2, 4, 6, 8, 10};
+        int[] arr3 = {5, 6, 7, 8};
+
+        int[] array1 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arr1, arr2));
+        ArrayUtil.printArray(array1);
+        System.out.println();
+        int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arr1, arr3));
+        ArrayUtil.printArray(array2);
+    }
+
+    @Test
+    public void testIntersectionAndUnionArray2() {
+        int[] arr1 = {1, 3, 5, 7, 9};
+        int[] arr2 = {2, 4, 6, 8, 10};
+        int[] arr3 = {5, 6, 7, 8};
+
+        List<Object> arrayList = new ArrayList<Object>();
+        arrayList.add((Object)arr1);
+        arrayList.add((Object)arr3);
+
+        int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arrayList));
+        ArrayUtil.printArray(array2);
+    }
+
+    @Test
+    public void testIntersectionAndUnionArrayForLeetCode() {
         String strGG = "4,10,17,20,22,23,31,42,44,50,54,56,57,66,128,133,139,140,146,155,158," +
                         "159,162,163,166,173,200,208,212,214,218,224,228,230,231,239,240,246," +
                         "247,249,251,253,257,259,261,266,269,270,271,272,274,276,279,280,281," +
@@ -63,6 +93,17 @@ public class ArrayUtilTest {
         int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(ArrayUtil.convertStringIntoArray(strMS), ArrayUtil.convertStringIntoArray(strZ)));
         ArrayUtil.printArray(array2);
         System.out.println("\nunionArray length: " + array2.length);
+    }
+
+
+    public void testGo() {
+
+        ArrayList<int[]> arrayList = new ArrayList<>();
+        int[] a1 = {1, 2, 3};
+        int[] b1 = {2, 3, 4, 5};
+
+        arrayList.add(a1);
+        arrayList.add(b1);
     }
 
 }

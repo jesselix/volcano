@@ -2,10 +2,7 @@ package org.junyingli.code.util;
 
 import org.junyingli.code.enumeration.CommonEnum;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class ArrayUtil {
 
@@ -104,19 +101,46 @@ public class ArrayUtil {
     public static int[] unionArray(int[] arr1, int[] arr2) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>();
 
         for (int i = 0; i < arr1.length; i++) {
             set1.add(Integer.valueOf(arr1[i]));
         }
 
+        resultSet.addAll(set1);
+        set1.clear();
+
         for (int i = 0; i < arr2.length; i++) {
-            set2.add(Integer.valueOf(arr2[i]));
+            set1.add(Integer.valueOf(arr2[i]));
         }
 
-        resultSet.clear();
         resultSet.addAll(set1);
-        resultSet.addAll(set2);
+
+        int[] resultArray = new int[resultSet.size()];
+
+        int i = 0;
+        for (Integer integer : resultSet) {
+            resultArray[i] = integer.intValue();
+            i++;
+        }
+
+        return resultArray;
+    }
+
+    public static int[] unionArray(List<Object> arrayList) {
+        Set<Integer> resultSet = new HashSet<>();
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            Object o = arrayList.indexOf(i);
+            int[] arr = (int[])o;
+            for (int j = 0; j < arr.length; i++) {
+                set1.add(Integer.valueOf(arr[i]));
+            }
+
+            resultSet.addAll(set1);
+            set1.clear();
+        }
 
         int[] resultArray = new int[resultSet.size()];
 
