@@ -69,8 +69,8 @@ public class ArrayUtilTest {
         int[] array1 = SortingUtil.bubbleSort(ArrayUtil.intersectionArray(arrayList));
         ArrayUtil.printArray(array1);
 
-//        int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arrayList));
-//        ArrayUtil.printArray(array2);
+        int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arrayList));
+        ArrayUtil.printArray(array2);
     }
 
     @Test
