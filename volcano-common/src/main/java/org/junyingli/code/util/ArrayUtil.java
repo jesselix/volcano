@@ -98,6 +98,40 @@ public class ArrayUtil {
         return resultArray;
     }
 
+    public static int[] intersectionArray(List<int[]> arrayList) {
+        Set<Integer> resultSet = new HashSet<>();
+        Set<Integer> set1 = new HashSet<>();
+
+        boolean x = true;
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            int[] arr = arrayList.get(i);
+
+            for (int j = 0; j < arr.length; j++) {
+                set1.add(Integer.valueOf(arr[j]));
+            }
+
+            if (x) {
+                resultSet.addAll(set1);
+            } else {
+                resultSet.retainAll(set1);
+            }
+            x = false;
+
+            set1.clear();
+        }
+
+        int[] resultArray = new int[resultSet.size()];
+
+        int i = 0;
+        for (Integer integer : resultSet) {
+            resultArray[i] = integer.intValue();
+            i++;
+        }
+
+        return resultArray;
+    }
+
     public static int[] unionArray(int[] arr1, int[] arr2) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
@@ -126,16 +160,15 @@ public class ArrayUtil {
         return resultArray;
     }
 
-    public static int[] unionArray(List<Object> arrayList) {
+    public static int[] unionArray(List<int[]> arrayList) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
-        Set<Integer> set2 = new HashSet<>();
 
         for (int i = 0; i < arrayList.size(); i++) {
-            Object o = arrayList.indexOf(i);
-            int[] arr = (int[])o;
-            for (int j = 0; j < arr.length; i++) {
-                set1.add(Integer.valueOf(arr[i]));
+            int[] arr = arrayList.get(i);
+
+            for (int j = 0; j < arr.length; j++) {
+                set1.add(Integer.valueOf(arr[j]));
             }
 
             resultSet.addAll(set1);

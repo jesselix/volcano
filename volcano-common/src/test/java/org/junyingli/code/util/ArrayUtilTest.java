@@ -58,15 +58,19 @@ public class ArrayUtilTest {
     @Test
     public void testIntersectionAndUnionArray2() {
         int[] arr1 = {1, 3, 5, 7, 9};
-        int[] arr2 = {2, 4, 6, 8, 10};
+        int[] arr2 = {2, 4, 6, 8, 10, 5, 7};
         int[] arr3 = {5, 6, 7, 8};
 
-        List<Object> arrayList = new ArrayList<Object>();
-        arrayList.add((Object)arr1);
-        arrayList.add((Object)arr3);
+        List<int[]> arrayList = new ArrayList<>();
+        arrayList.add(arr1);
+        arrayList.add(arr2);
+        arrayList.add(arr3);
 
-        int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arrayList));
-        ArrayUtil.printArray(array2);
+        int[] array1 = SortingUtil.bubbleSort(ArrayUtil.intersectionArray(arrayList));
+        ArrayUtil.printArray(array1);
+
+//        int[] array2 = SortingUtil.bubbleSort(ArrayUtil.unionArray(arrayList));
+//        ArrayUtil.printArray(array2);
     }
 
     @Test
