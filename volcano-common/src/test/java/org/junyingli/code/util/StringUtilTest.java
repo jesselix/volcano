@@ -10,6 +10,12 @@ public class StringUtilTest {
         System.out.println(aa);
         String bb = StringUtil.commentSeparator("Hello World", '-', 10);
         System.out.println(bb);
+        String cc = StringUtil.commentSeparator("constructors", '*', 30);
+        System.out.println(cc);
+        String dd = StringUtil.commentSeparator("getters & setters", '*', 30);
+        System.out.println(dd);
+        String ee = StringUtil.commentSeparator("functions", '*', 30);
+        System.out.println(ee);
     }
 
     @Test
