@@ -8,13 +8,13 @@ public class StringUtilTest {
     public void testCommentSeparator() {
         String aa = StringUtil.commentSeparator("@!", '*', 20);
         System.out.println(aa);
-        String bb = StringUtil.commentSeparator("Hello World", '-', 10);
+        String bb = StringUtil.commentSeparator("Hello World", '-', 20);
         System.out.println(bb);
-        String cc = StringUtil.commentSeparator("constructors", '*', 30);
+        String cc = StringUtil.commentSeparator("constructors", '*', 50);
         System.out.println(cc);
-        String dd = StringUtil.commentSeparator("getters & setters", '*', 30);
+        String dd = StringUtil.commentSeparator("getters & setters", '*', 50);
         System.out.println(dd);
-        String ee = StringUtil.commentSeparator("functions", '*', 30);
+        String ee = StringUtil.commentSeparator("functions", '*', 50);
         System.out.println(ee);
     }
 
