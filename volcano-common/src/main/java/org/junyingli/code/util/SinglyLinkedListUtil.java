@@ -6,65 +6,6 @@ import org.junyingli.code.data.SinglyListNode;
 public class SinglyLinkedListUtil {
 
     /**
-     * build singly linked list from array
-     * @param array
-     * @return
-     */
-    public static SinglyLinkedList buildSinglyLinkedListFromIntArray(int[] array) {
-
-        SinglyListNode[] array2 = new SinglyListNode[array.length];
-
-        for (int i = array.length - 1; i >= 0; i--) {
-            SinglyListNode tempNode = new SinglyListNode();
-            tempNode.setValue(array[i]);
-
-            if (i == array.length - 1) {
-                tempNode.setNext(null);
-            }
-            else {
-                tempNode.setNext(array2[i + 1]);
-            }
-
-            array2[i] = tempNode;
-        }
-
-        SinglyListNode headNode = array2[0];
-        SinglyLinkedList linkedList = new SinglyLinkedList();
-        linkedList.setHeadNode(headNode);
-
-        return linkedList;
-    }
-
-    /**
-     * build singly linked list from list node array with null next
-     * @param array
-     * @return
-     */
-    public static SinglyLinkedList buildSinglyLinkedListFromListNodeArrayWithNullNext(SinglyListNode[] array) {
-        SinglyListNode[] array2 = new SinglyListNode[array.length];
-
-        for (int i = array.length - 1; i >= 0; i--) {
-            SinglyListNode tempNode = new SinglyListNode();
-            tempNode.setValue(array[i].getValue());
-
-            if (i == array.length - 1) {
-                tempNode.setNext(null);
-            }
-            else {
-                tempNode.setNext(array2[i + 1]);
-            }
-
-            array2[i] = tempNode;
-        }
-
-        SinglyListNode headNode = array2[0];
-        SinglyLinkedList linkedList = new SinglyLinkedList();
-        linkedList.setHeadNode(headNode);
-
-        return linkedList;
-    }
-
-    /**
      * print elements of the linked List
      * @param linkedList
      */
@@ -77,6 +18,40 @@ public class SinglyLinkedListUtil {
         }
 
         System.out.println();
+    }
+
+    /**
+     * create singly linked list by array
+     * @param array
+     * @return
+     */
+    public static SinglyLinkedList createSinglyLinkedListByIntArray(int[] array) {
+        SinglyListNode rootNode = new SinglyListNode(array[0]);
+        SinglyListNode goNode = rootNode;
+
+        for (int i = 1; i < array.length; i++) {
+            SinglyListNode tempNode = new SinglyListNode(array[i]);
+            goNode.setNext(tempNode);
+            goNode = tempNode;
+        }
+
+        SinglyLinkedList linkedList = new SinglyLinkedList(rootNode);
+        return linkedList;
+    }
+
+    /**
+     * create singly linked list by list node array with null next
+     * @param array
+     * @return
+     */
+    public static SinglyLinkedList createSinglyLinkedListByListNodeArrayWithNullNext(SinglyListNode[] array) {
+
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i].setNext(array[i + 1]);
+        }
+
+        SinglyLinkedList linkedList = new SinglyLinkedList(array[0]);
+        return linkedList;
     }
 
     /**

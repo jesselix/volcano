@@ -25,19 +25,19 @@ public class SinglyLinkedListUtilTest {
         SinglyLinkedList linkedList = new SinglyLinkedList();
         int[] array = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 
-        linkedList = SinglyLinkedListUtil.buildSinglyLinkedListFromIntArray(array);
+        linkedList = SinglyLinkedListUtil.createSinglyLinkedListByIntArray(array);
         SinglyLinkedListUtil.printSinglyLinkedList(linkedList);
     }
 
     @Test
-    public void testBuildSinglyLinkedListFromListNodeArrayWithNullNext() {
+    public void testCreateSinglyLinkedListByListNodeArrayWithNullNext() {
         SinglyListNode node1 = new SinglyListNode(1);
         SinglyListNode node2 = new SinglyListNode(2);
         SinglyListNode node3 = new SinglyListNode(3);
         SinglyListNode node4 = new SinglyListNode(4);
         SinglyListNode[] array = {node1, node2, node3, node4};
 
-        SinglyLinkedList linkedList = SinglyLinkedListUtil.buildSinglyLinkedListFromListNodeArrayWithNullNext(array);
+        SinglyLinkedList linkedList = SinglyLinkedListUtil.createSinglyLinkedListByListNodeArrayWithNullNext(array);
 
         SinglyLinkedListUtil.printSinglyLinkedList(linkedList);
     }
