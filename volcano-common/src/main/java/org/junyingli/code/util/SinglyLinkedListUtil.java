@@ -40,6 +40,25 @@ public class SinglyLinkedListUtil {
     }
 
     /**
+     * create int array by Singly linked list
+     * @param node
+     * @return
+     */
+    public static int[] createIntArrayBySinglyLinkedList(SinglyListNode node) {
+        int[] array = new int[getLength(node)];
+
+        SinglyListNode currentNode = node;
+        int i = 0;
+        while (currentNode.getNext() != null) {
+            currentNode = currentNode.getNext();
+            array[i] = currentNode.getValue();
+            i++;
+        }
+
+        return array;
+    }
+
+    /**
      * create singly linked list by list node array with null next
      * @param array
      * @return

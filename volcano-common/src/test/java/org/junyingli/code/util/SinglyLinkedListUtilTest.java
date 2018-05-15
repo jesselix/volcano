@@ -21,12 +21,27 @@ public class SinglyLinkedListUtilTest {
     }
 
     @Test
-    public void testBuildSinglyLinkedListFromIntArray() {
+    public void testCreateSinglyLinkedListByIntArray() {
         SinglyLinkedList linkedList = new SinglyLinkedList();
         int[] array = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
 
         linkedList = SinglyLinkedListUtil.createSinglyLinkedListByIntArray(array);
         SinglyLinkedListUtil.printSinglyLinkedList(linkedList);
+    }
+
+    @Test
+    public void testCreateIntArrayBySinglyLinkedList() {
+        SinglyListNode node1 = new SinglyListNode(1);
+        SinglyListNode node2 = new SinglyListNode(2);
+        SinglyListNode node3 = new SinglyListNode(3);
+        SinglyListNode node4 = new SinglyListNode(4);
+
+        node1.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+
+        int[] arr = SinglyLinkedListUtil.createIntArrayBySinglyLinkedList(node1);
+        ArrayUtil.printArray(arr);
     }
 
     @Test
