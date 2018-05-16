@@ -3,7 +3,7 @@ package org.junyingli.code.data;
 public class SinglyLinkedList {
 
     // head node
-    private SinglyListNode headNode;
+    private SinglyLinkedListNode headNode;
     // position of the node
     private int position = 0;
 
@@ -12,16 +12,16 @@ public class SinglyLinkedList {
         this.headNode = null;
     }
 
-    public SinglyLinkedList(SinglyListNode headNode) {
+    public SinglyLinkedList(SinglyLinkedListNode headNode) {
         this.headNode = headNode;
     }
 
     // **************************************** getters & setters *****************************************
-    public SinglyListNode getHeadNode() {
+    public SinglyLinkedListNode getHeadNode() {
         return headNode;
     }
 
-    public void setHeadNode(SinglyListNode headNode) {
+    public void setHeadNode(SinglyLinkedListNode headNode) {
         this.headNode = headNode;
     }
 

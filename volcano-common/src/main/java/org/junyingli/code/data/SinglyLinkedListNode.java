@@ -1,23 +1,23 @@
 package org.junyingli.code.data;
 
-public class SinglyListNode {
+public class SinglyLinkedListNode {
 
     // value of the node
     private int value;
     // pointer to the next node
-    private SinglyListNode next;
+    private SinglyLinkedListNode next;
 
     // *********************** constructors ***********************
-    public SinglyListNode() {
+    public SinglyLinkedListNode() {
 
     }
 
-    public SinglyListNode(int value) {
+    public SinglyLinkedListNode(int value) {
         this.value = value;
         this.next = null;
     }
 
-    public SinglyListNode(int value, SinglyListNode next) {
+    public SinglyLinkedListNode(int value, SinglyLinkedListNode next) {
         this.value = value;
         this.next = next;
     }
@@ -31,11 +31,11 @@ public class SinglyListNode {
         this.value = value;
     }
 
-    public SinglyListNode getNext() {
+    public SinglyLinkedListNode getNext() {
         return next;
     }
 
-    public void setNext(SinglyListNode next) {
+    public void setNext(SinglyLinkedListNode next) {
         this.next = next;
     }
 

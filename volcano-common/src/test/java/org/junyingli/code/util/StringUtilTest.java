@@ -16,6 +16,8 @@ public class StringUtilTest {
         System.out.println(dd);
         String ee = StringUtil.commentSeparator("functions", '*', 50);
         System.out.println(ee);
+        String ff = StringUtil.commentSeparator("CRUD functions", '*', 50);
+        System.out.println(ff);
     }
 
     @Test
