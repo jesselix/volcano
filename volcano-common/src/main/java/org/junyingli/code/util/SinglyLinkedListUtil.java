@@ -49,9 +49,9 @@ public class SinglyLinkedListUtil {
 
         SinglyListNode currentNode = node;
         int i = 0;
-        while (currentNode.getNext() != null) {
-            currentNode = currentNode.getNext();
+        while (currentNode != null) {
             array[i] = currentNode.getValue();
+            currentNode = currentNode.getNext();
             i++;
         }
 
