@@ -48,7 +48,6 @@ public class SinglyLinkedListUtil {
      */
     public static int[] convertSinglyLinkedListIntoIntArray(SinglyLinkedListNode node) {
         int[] array = new int[getLength(node)];
-
         SinglyLinkedListNode currentNode = node;
         int i = 0;
         while (currentNode != null) {
@@ -73,6 +72,42 @@ public class SinglyLinkedListUtil {
 
         SinglyLinkedList linkedList = new SinglyLinkedList(array[0]);
         return linkedList;
+    }
+
+    // ******************************************** functions *********************************************
+
+    /**
+     * get length of the linked list
+     * @param singlyLinkedList
+     * @return
+     */
+    public static int getLength(SinglyLinkedList singlyLinkedList) {
+        int length = 0;
+
+        SinglyLinkedListNode head = singlyLinkedList.getHeadNode();
+
+        while (head != null) {
+            length++;
+            head = head.getNext();
+        }
+
+        return length;
+    }
+
+    /**
+     * get length of the linked list by head node
+     * @param head
+     * @return
+     */
+    public static int getLength(SinglyLinkedListNode head) {
+        int length = 0;
+
+        while (head != null) {
+            length++;
+            head = head.getNext();
+        }
+
+        return length;
     }
 
     // ****************************************** CRUD functions ******************************************
@@ -152,22 +187,6 @@ public class SinglyLinkedListUtil {
         }
 
         return currentNode;
-    }
-
-    /**
-     * get length of the linked list from head node
-     * @param head
-     * @return
-     */
-    public static int getLength(SinglyLinkedListNode head) {
-        int length = 0;
-
-        while (head != null) {
-            length++;
-            head = head.getNext();
-        }
-
-        return length;
     }
 
 }
