@@ -23,11 +23,11 @@ public class SinglyLinkedListUtil {
     // ****************************************** initialization ******************************************
 
     /**
-     * create singly linked list by array
+     * convert int array into singly linked list
      * @param array
      * @return
      */
-    public static SinglyLinkedList createSinglyLinkedListByIntArray(int[] array) {
+    public static SinglyLinkedList convertIntArrayIntoSinglyLinkedList(int[] array) {
         SinglyLinkedListNode rootNode = new SinglyLinkedListNode(array[0]);
         SinglyLinkedListNode goNode = rootNode;
 
@@ -42,11 +42,11 @@ public class SinglyLinkedListUtil {
     }
 
     /**
-     * create int array by Singly linked list
+     * convert singly linked list into int array
      * @param node
      * @return
      */
-    public static int[] createIntArrayBySinglyLinkedList(SinglyLinkedListNode node) {
+    public static int[] convertSinglyLinkedListIntoIntArray(SinglyLinkedListNode node) {
         int[] array = new int[getLength(node)];
 
         SinglyLinkedListNode currentNode = node;
@@ -61,11 +61,11 @@ public class SinglyLinkedListUtil {
     }
 
     /**
-     * create singly linked list by list node array with null next
+     * convert list node array with null next into singly linked list
      * @param array
      * @return
      */
-    public static SinglyLinkedList createSinglyLinkedListByListNodeArrayWithNullNext(SinglyLinkedListNode[] array) {
+    public static SinglyLinkedList convertListNodeArrayWithNullNextIntoSinglyLinkedList(SinglyLinkedListNode[] array) {
 
         for (int i = 0; i < array.length - 1; i++) {
             array[i].setNext(array[i + 1]);
