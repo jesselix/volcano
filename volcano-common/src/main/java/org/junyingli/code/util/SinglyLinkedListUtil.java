@@ -138,12 +138,12 @@ public class SinglyLinkedListUtil {
 
     /**
      * find node by value
-     * @param linkedList
+     * @param singlyLinkedList
      * @param value
      * @return
      */
-    public static SinglyLinkedListNode findByValue(SinglyLinkedList linkedList, int value) {
-        SinglyLinkedListNode currentNode = linkedList.getHeadNode();
+    public static SinglyLinkedListNode findByValue(SinglyLinkedList singlyLinkedList, int value) {
+        SinglyLinkedListNode currentNode = singlyLinkedList.getHeadNode();
 
         while (currentNode.getValue() != value) {
             if (currentNode.getNext() == null)

@@ -74,4 +74,11 @@ public class SinglyLinkedListUtilTest {
         node = SinglyLinkedListUtil.findByPosition(singlyLinkedList, 3);
         System.out.println(node.getValue());
     }
+
+    @Test
+    public void testFindByValue() {
+        SinglyLinkedListNode node = new SinglyLinkedListNode();
+        node = SinglyLinkedListUtil.findByValue(singlyLinkedList, 3);
+        System.out.println(node.getValue());
+    }
 }
