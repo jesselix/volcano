@@ -1,8 +1,8 @@
 package org.junyingli.code.util;
 
 import org.junit.Test;
-import org.junyingli.code.data.SinglyLinkedList;
-import org.junyingli.code.data.SinglyLinkedListNode;
+import org.junyingli.code.datastructure.list.linkedlist.SinglyLinkedList;
+import org.junyingli.code.datastructure.list.linkedlist.SinglyLinkedListNode;
 
 public class SinglyLinkedListUtilTest {
 

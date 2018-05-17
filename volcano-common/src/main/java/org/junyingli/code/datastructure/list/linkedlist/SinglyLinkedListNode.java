@@ -1,4 +1,4 @@
-package org.junyingli.code.data;
+package org.junyingli.code.datastructure.list.linkedlist;
 
 public class SinglyLinkedListNode {
 
