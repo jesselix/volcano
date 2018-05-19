@@ -60,7 +60,7 @@ public class BinaryTree {
     }
 
     //层次遍历
-    public void layerorder() {
+    public void layerOrder() {
         System.out.print("binaryTree层次遍历:");
         LinkedList<BinaryTreeNode<Integer>> queue = new LinkedList<BinaryTreeNode<Integer>>();
         queue.addLast(root);
@@ -80,7 +80,7 @@ public class BinaryTree {
         BinaryTree bt = new BinaryTree(new int[]{1,2,3,4,5,6,7,8});
         bt.inorder();
 //        bt.preorder();
-        bt.layerorder();
+        bt.layerOrder();
 //        bt.preorderNoRecursion();
 //        bt.inorderNoRecursion();
 //        bt.postorderNoRecursion();
