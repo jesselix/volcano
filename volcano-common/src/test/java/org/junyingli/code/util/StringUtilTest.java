@@ -18,6 +18,8 @@ public class StringUtilTest {
         System.out.println(ee);
         String ff = StringUtil.commentSeparator("CRUD functions", '*', 50);
         System.out.println(ff);
+        String gg = StringUtil.commentSeparator("depth-first traversal", '*', 50);
+        System.out.println(gg);
     }
 
     @Test

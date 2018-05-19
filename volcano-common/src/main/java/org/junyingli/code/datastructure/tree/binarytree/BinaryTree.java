@@ -43,4 +43,47 @@ public class BinaryTree {
             }
         }
     }
+
+    public void inorder() {
+        System.out.print("binaryTree递归中序遍历:");
+        inorderTraverseRecursion(root);
+        System.out.println();
+    }
+
+    private void inorderTraverseRecursion(BinaryTreeNode<Integer> node) {
+
+        if (node.getLeftChild() != null)
+            inorderTraverseRecursion(node.getLeftChild());
+        System.out.print(node.getValue());
+        if (node.getRightChild() != null)
+            inorderTraverseRecursion(node.getRightChild());
+    }
+
+    //层次遍历
+    public void layerorder() {
+        System.out.print("binaryTree层次遍历:");
+        LinkedList<BinaryTreeNode<Integer>> queue = new LinkedList<BinaryTreeNode<Integer>>();
+        queue.addLast(root);
+        BinaryTreeNode<Integer> current = null;
+        while(!queue.isEmpty()) {
+            current = queue.removeFirst();
+            if (current.getLeftChild() != null)
+                queue.addLast(current.getLeftChild());
+            if (current.getRightChild() != null)
+                queue.addLast(current.getRightChild());
+            System.out.print(current.getValue());
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        BinaryTree bt = new BinaryTree(new int[]{1,2,3,4,5,6,7,8});
+        bt.inorder();
+//        bt.preorder();
+        bt.layerorder();
+//        bt.preorderNoRecursion();
+//        bt.inorderNoRecursion();
+//        bt.postorderNoRecursion();
+//        System.out.println("深度为：" + bt.getDepth());
+    }
 }
