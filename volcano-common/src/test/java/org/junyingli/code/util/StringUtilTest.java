@@ -20,6 +20,10 @@ public class StringUtilTest {
         System.out.println(ff);
         String gg = StringUtil.commentSeparator("depth-first traversal", '*', 50);
         System.out.println(gg);
+        String g2 = StringUtil.commentSeparator("depth-first traversal recursion", '*', 50);
+        System.out.println(g2);
+        String g3 = StringUtil.commentSeparator("depth-first traversal non-recursion", '*', 50);
+        System.out.println(g3);
     }
 
     @Test

@@ -20,15 +20,7 @@ public class BinaryTreeUtilTest {
         node1.setRightChild(node3);
     }
 
-
-    @Test
-    public void testLevelOrderTraversal() {
-        ArrayList<Integer> al = BinaryTreeUtil.levelOrderTraversal(node1);
-
-        for (Integer list : al) {
-            System.out.print(list + " ");
-        }
-    }
+    // ********************************* depth-first traversal recursion **********************************
 
     @Test
     public void testPreOrderTraversal() {
@@ -43,6 +35,34 @@ public class BinaryTreeUtilTest {
     @Test
     public void testPostOrderTraversal() {
         BinaryTreeUtil.postOrderTraversal(node1);
+    }
+
+    // ******************************* depth-first traversal non-recursion ********************************
+
+    @Test
+    public void testPreOrderTraversal2() {
+        BinaryTreeUtil.preOrderTraversal2(node1);
+    }
+
+    @Test
+    public void testInOrderTraversal2() {
+        BinaryTreeUtil.inOrderTraversal2(node1);
+    }
+
+    @Test
+    public void testPostOrderTraversal2() {
+        BinaryTreeUtil.postOrderTraversal2(node1);
+    }
+
+    // ************************************* breadth-first traversal **************************************
+
+    @Test
+    public void testLevelOrderTraversal() {
+        ArrayList<Integer> al = BinaryTreeUtil.levelOrderTraversal(node1);
+
+        for (Integer list : al) {
+            System.out.print(list + " ");
+        }
     }
 
 }
