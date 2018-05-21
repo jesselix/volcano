@@ -38,32 +38,30 @@ public class BinaryTreeUtil {
     // ******************************* depth-first traversal non-recursion ********************************
 
     public static void preOrderTraversal2(BinaryTreeNode root) {
-        LinkedList<BinaryTreeNode> stack = new LinkedList<>();
-        BinaryTreeNode pNode = root;
-        while (pNode != null || !stack.isEmpty()) {
-            if (pNode != null) {
-                System.out.print(pNode.getValue()+"  ");
-                stack.push(pNode);
-                pNode = pNode.getLeftChild();
-            } else { //pNode == null && !stack.isEmpty()
-                BinaryTreeNode node = stack.pop();
-                pNode = node.getRightChild();
-            }
+        LinkedList<BinaryTreeNode> stack = new LinkedList<BinaryTreeNode>();
+        BinaryTreeNode currentNode = null;
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            currentNode = stack.pop();
+            System.out.print(currentNode.getValue() + " ");
+            if (currentNode.getRightChild() != null)
+                stack.push(currentNode.getRightChild());
+            if (currentNode.getLeftChild() != null)
+                stack.push(currentNode.getLeftChild());
         }
     }
 
     public static void inOrderTraversal2(BinaryTreeNode root) {
-        LinkedList<BinaryTreeNode> stack = new LinkedList<>();
-        BinaryTreeNode pNode = root;
-        while (pNode != null || !stack.isEmpty()) {
-            if (pNode != null) {
-                stack.push(pNode);
-                pNode = pNode.getLeftChild();
-            } else { //pNode == null && !stack.isEmpty()
-                BinaryTreeNode node = stack.pop();
-                System.out.print(node.getValue()+"  ");
-                pNode = node.getRightChild();
+        LinkedList<BinaryTreeNode> stack = new LinkedList<BinaryTreeNode>();
+        BinaryTreeNode currentNode = root;
+        while (currentNode != null || !stack.isEmpty()) {
+            while (currentNode != null) {
+                stack.push(currentNode);
+                currentNode = currentNode.getLeftChild();
             }
+            currentNode = stack.pop();
+            System.out.print(currentNode.getValue() + " ");
+            currentNode = currentNode.getRightChild();
         }
     }
 
@@ -72,13 +70,11 @@ public class BinaryTreeUtil {
         BinaryTreeNode currentNode = root;
         BinaryTreeNode rightNode = null;
         while (currentNode != null || !stack.isEmpty()) {
-            // 一直循环到二叉排序树最左端的叶子结点（currentNode是null）
             while (currentNode != null) {
                 stack.push(currentNode);
                 currentNode = currentNode.getLeftChild();
             }
             currentNode = stack.pop();
-            // 当前结点没有右结点或上一个结点（已经输出的结点）是当前结点的右结点，则输出当前结点
             while (currentNode.getRightChild() == null || currentNode.getRightChild() == rightNode) {
                 System.out.print(currentNode.getValue() + " ");
                 rightNode = currentNode;
@@ -87,7 +83,7 @@ public class BinaryTreeUtil {
                 }
                 currentNode = stack.pop();
             }
-            stack.push(currentNode); //还有右结点没有遍历
+            stack.push(currentNode);
             currentNode = currentNode.getRightChild();
         }
     }
@@ -99,26 +95,22 @@ public class BinaryTreeUtil {
      * @param root
      * @return
      */
-    public static ArrayList<Integer> levelOrderTraversal(BinaryTreeNode root) {
-        ArrayList arrayList = new ArrayList<Integer>();
-        if (root == null) {
-            return arrayList;
-        }
-
-        Queue<BinaryTreeNode> queue = new LinkedList<>();
+    public static void levelOrderTraversal(BinaryTreeNode root) {
+        Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
+        BinaryTreeNode currentNode;
         queue.offer(root);
         while (!queue.isEmpty()) {
-            BinaryTreeNode binaryTreeNode = queue.poll();
-            if (binaryTreeNode.getLeftChild() != null) {
-                queue.offer(binaryTreeNode.getLeftChild());
-            }
-            if (binaryTreeNode.getRightChild() != null) {
-                queue.offer(binaryTreeNode.getRightChild());
-            }
-            arrayList.add(binaryTreeNode.getValue());
+            currentNode = queue.poll();
+            System.out.print(currentNode.getValue() + " ");
+            if (currentNode.getLeftChild() != null)
+                queue.offer(currentNode.getLeftChild());
+            if (currentNode.getRightChild() != null)
+                queue.offer(currentNode.getRightChild());
         }
-
-        return arrayList;
     }
+
+
+
+
 
 }

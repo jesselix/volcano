@@ -3,15 +3,13 @@ package org.junyingli.code.util;
 import org.junit.Test;
 import org.junyingli.code.datastructure.tree.binarytree.BinaryTreeNode;
 
-import java.util.ArrayList;
-
 public class BinaryTreeUtilTest {
 
-    BinaryTreeNode node1 = new BinaryTreeNode(11);
-    BinaryTreeNode node2 = new BinaryTreeNode(12);
-    BinaryTreeNode node3 = new BinaryTreeNode(13);
-    BinaryTreeNode node4 = new BinaryTreeNode(14);
-    BinaryTreeNode node5 = new BinaryTreeNode(15);
+    BinaryTreeNode node1 = new BinaryTreeNode(1);
+    BinaryTreeNode node2 = new BinaryTreeNode(2);
+    BinaryTreeNode node3 = new BinaryTreeNode(3);
+    BinaryTreeNode node4 = new BinaryTreeNode(4);
+    BinaryTreeNode node5 = new BinaryTreeNode(5);
 
     {
         node1.setLeftChild(node2);
@@ -58,11 +56,7 @@ public class BinaryTreeUtilTest {
 
     @Test
     public void testLevelOrderTraversal() {
-        ArrayList<Integer> al = BinaryTreeUtil.levelOrderTraversal(node1);
-
-        for (Integer list : al) {
-            System.out.print(list + " ");
-        }
+        BinaryTreeUtil.levelOrderTraversal(node1);
     }
 
 }

@@ -1,39 +1,39 @@
 package org.junyingli.code.datastructure.tree.binarytree;
 
-public class BinaryTreeNode<V> {
+public class BinaryTreeNode<E extends Comparable<E>> {
 
-    private V value;
-    private BinaryTreeNode<V> leftChild;
-    private BinaryTreeNode<V> rightChild;
+    private E value;
+    private BinaryTreeNode<E> leftChild;
+    private BinaryTreeNode<E> rightChild;
 
-    public BinaryTreeNode() {
-    }
 
-    public BinaryTreeNode(V value) {
+    public BinaryTreeNode(E value) {
         this.value = value;
+        leftChild = null;
+        rightChild = null;
     }
 
-    public V getValue() {
+    public E getValue() {
         return value;
     }
 
-    public void setValue(V value) {
+    public void setValue(E value) {
         this.value = value;
     }
 
-    public BinaryTreeNode<V> getLeftChild() {
+    public BinaryTreeNode<E> getLeftChild() {
         return leftChild;
     }
 
-    public void setLeftChild(BinaryTreeNode<V> leftChild) {
+    public void setLeftChild(BinaryTreeNode<E> leftChild) {
         this.leftChild = leftChild;
     }
 
-    public BinaryTreeNode<V> getRightChild() {
+    public BinaryTreeNode<E> getRightChild() {
         return rightChild;
     }
 
-    public void setRightChild(BinaryTreeNode<V> rightChild) {
+    public void setRightChild(BinaryTreeNode<E> rightChild) {
         this.rightChild = rightChild;
     }
 
