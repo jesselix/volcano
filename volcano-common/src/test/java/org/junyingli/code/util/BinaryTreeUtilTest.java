@@ -1,6 +1,7 @@
 package org.junyingli.code.util;
 
 import org.junit.Test;
+import org.junyingli.code.datastructure.tree.binarytree.BinaryTree;
 import org.junyingli.code.datastructure.tree.binarytree.BinaryTreeNode;
 
 public class BinaryTreeUtilTest {
@@ -16,7 +17,18 @@ public class BinaryTreeUtilTest {
         node2.setLeftChild(node4);
         node2.setRightChild(node5);
         node1.setRightChild(node3);
+
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.insertNode(11);
+        binaryTree.insertNode(12);
+        binaryTree.insertNode(13);
+        binaryTree.insertNode(14);
+        binaryTree.insertNode(15);
+
+        BinaryTreeNode node01 = binaryTree.getRoot();
     }
+
+
 
     // ********************************* depth-first traversal recursion **********************************
 
