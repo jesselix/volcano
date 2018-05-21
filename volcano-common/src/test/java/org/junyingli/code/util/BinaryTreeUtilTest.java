@@ -28,8 +28,6 @@ public class BinaryTreeUtilTest {
         BinaryTreeNode node01 = binaryTree.getRoot();
     }
 
-
-
     // ********************************* depth-first traversal recursion **********************************
 
     @Test
