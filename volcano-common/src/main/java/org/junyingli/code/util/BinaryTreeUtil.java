@@ -96,7 +96,7 @@ public class BinaryTreeUtil {
      * @return
      */
     public static void levelOrderTraversal(BinaryTreeNode root) {
-        Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
         BinaryTreeNode currentNode;
         queue.offer(root);
         while (!queue.isEmpty()) {
