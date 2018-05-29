@@ -9,7 +9,6 @@ public class SinglyLinkedListNode {
 
     // *********************** constructors ***********************
     public SinglyLinkedListNode() {
-
     }
 
     public SinglyLinkedListNode(int value) {
