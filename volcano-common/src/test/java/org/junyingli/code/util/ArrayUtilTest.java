@@ -23,32 +23,39 @@ public class ArrayUtilTest {
     String strZ  = "1,2,3,5,8,15,1,20,21,23,42,48,49,73,78,89,98,102,119,121,126,127,138,139,141,146,155,160,167,186,199,200,204,206,215,234,235,236,238,239,240,242,297,355,380,387,396,414,438,449,451,459,460,508,516,517,529,532,534,535,536,537,538,545,579";
     String strIn = "1,21,23,33,34,46,47,50,53,56,57,65,68,76,101,102,103,104,127,149,150,152,156,170,173,18,198,205,236,238,243,244,245,254,256,277,297,311,339,364,366,367,464,515";
 
-    private int[] testArray = {4, 9, 5, 8, 7, 0, 1, 3, 2, 6};
-    private int[] orderedTestArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private int[] randomArray = {4, 9, 5, 8, 7, 0, 1, 3, 2, 6};
+    private int[] orderedArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private int[] orderedArray2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     @Test
     public void testPrintArray() {
-        ArrayUtil.printArray(testArray);
+        ArrayUtil.printArray(randomArray);
     }
 
     @Test
     public void testSwap() {
-        ArrayUtil.swap(orderedTestArray, 1, 8);
-        ArrayUtil.printArray(orderedTestArray);
+        ArrayUtil.swap(orderedArray, 1, 8);
+        ArrayUtil.printArray(orderedArray);
+    }
+
+    @Test
+    public void testReverse() {
+        ArrayUtil.reverse(orderedArray);
+        ArrayUtil.printArray(orderedArray);
     }
 
     @Test
     public void testShuffleArray() {
-        ArrayUtil.printArray(orderedTestArray);
+        ArrayUtil.printArray(orderedArray);
         System.out.println();
-        ArrayUtil.printArray(ArrayUtil.shuffleArray(orderedTestArray));
+        ArrayUtil.printArray(ArrayUtil.shuffleArray(orderedArray));
         System.out.println();
     }
 
     @Test
     public void testFindMinMax() {
-        System.out.println(ArrayUtil.findMinMax(testArray, CommonEnum.MinMax.MIN));
-        System.out.println(ArrayUtil.findMinMax(testArray, CommonEnum.MinMax.MAX));
+        System.out.println(ArrayUtil.findMinMax(randomArray, CommonEnum.MinMax.MIN));
+        System.out.println(ArrayUtil.findMinMax(randomArray, CommonEnum.MinMax.MAX));
     }
 
     @Test

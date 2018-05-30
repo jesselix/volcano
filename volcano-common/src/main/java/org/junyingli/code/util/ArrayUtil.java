@@ -32,6 +32,13 @@ public class ArrayUtil {
         array[index2] = temp;
     }
 
+    public static void reverse(int[] array) {
+        int length = array.length;
+        for (int i = 0; i < length * 0.5; i++) {
+            swap(array, i, length - 1 - i);
+        }
+    }
+
     public static void generateArrayWithRandomNumber(int length, int lowerLimit, int upperLimit) {
         System.out.println();
     }
