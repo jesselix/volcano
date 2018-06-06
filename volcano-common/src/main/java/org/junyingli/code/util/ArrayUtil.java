@@ -6,6 +6,10 @@ import java.util.*;
 
 public class ArrayUtil {
 
+    /**
+     * print int array
+     * @param array
+     */
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
@@ -16,6 +20,10 @@ public class ArrayUtil {
         }
     }
 
+    /**
+     * print integer array
+     * @param array
+     */
     public static void printArray(Integer[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
@@ -26,12 +34,22 @@ public class ArrayUtil {
         }
     }
 
+    /**
+     * swap two elements
+     * @param array
+     * @param index1
+     * @param index2
+     */
     public static void swap(int[] array, int index1, int index2) {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
 
+    /**
+     * reverse the array
+     * @param array
+     */
     public static void reverse(int[] array) {
         int length = array.length;
         for (int i = 0; i < length * 0.5; i++) {
@@ -39,10 +57,21 @@ public class ArrayUtil {
         }
     }
 
-    public static void generateArrayWithRandomNumber(int length, int lowerLimit, int upperLimit) {
+    /**
+     * generate array with random numbers
+     * @param length
+     * @param lowerLimit
+     * @param upperLimit
+     */
+    public static void generateArrayWithRandomNumbers(int length, int lowerLimit, int upperLimit) {
         System.out.println();
     }
 
+    /**
+     * shuffle the array
+     * @param array
+     * @return
+     */
     public static int[] shuffleArray(int[] array) {
         Random random = new Random();
 
@@ -54,6 +83,12 @@ public class ArrayUtil {
         return array;
     }
 
+    /**
+     * fin minimum or maximum number
+     * @param array
+     * @param minMax
+     * @return
+     */
     public static int findMinMax(int[] array, CommonEnum.MinMax minMax) {
         if (CommonEnum.MinMax.MIN.equals(minMax)) {
             int min = array[0];
@@ -76,6 +111,11 @@ public class ArrayUtil {
         }
     }
 
+    /**
+     * convert string into array
+     * @param str
+     * @return
+     */
     public static int[] convertStringIntoArray(String str) {
         String[] splitArray = str.split(",");
         int[] array = new int[splitArray.length];
@@ -87,6 +127,12 @@ public class ArrayUtil {
         return array;
     }
 
+    /**
+     * intersection of two arrays
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public static int[] intersectionArray(int[] arr1, int[] arr2) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
@@ -115,6 +161,11 @@ public class ArrayUtil {
         return resultArray;
     }
 
+    /**
+     * intersection of a list of arrays
+     * @param arrayList
+     * @return
+     */
     public static int[] intersectionArray(List<int[]> arrayList) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
@@ -149,6 +200,12 @@ public class ArrayUtil {
         return resultArray;
     }
 
+    /**
+     * union of two arrays
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public static int[] unionArray(int[] arr1, int[] arr2) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
@@ -177,6 +234,11 @@ public class ArrayUtil {
         return resultArray;
     }
 
+    /**
+     * union of a list of arrays
+     * @param arrayList
+     * @return
+     */
     public static int[] unionArray(List<int[]> arrayList) {
         Set<Integer> resultSet = new HashSet<>();
         Set<Integer> set1 = new HashSet<>();
