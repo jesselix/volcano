@@ -63,8 +63,26 @@ public class ArrayUtil {
      * @param lowerLimit
      * @param upperLimit
      */
-    public static void generateArrayWithRandomNumbers(int length, int lowerLimit, int upperLimit) {
-        System.out.println();
+    public static int[] generateArrayWithRandomNumbers(int length, int lowerLimit, int upperLimit, boolean isRepeatAllowed) {
+        if (length < 1 || lowerLimit >= upperLimit) {
+            return null;
+        }
+
+        int[] array = new int[length];
+
+        if (isRepeatAllowed) {
+            for (int i = 0; i < length; i++) {
+                array[i] = RandomUtil.randomNumberInRange(lowerLimit, upperLimit);
+            }
+        } else {
+            HashSet hashSet = new HashSet();
+            while (hashSet.size() != length) {
+                hashSet.add(RandomUtil.randomNumberInRange(lowerLimit, upperLimit));
+            }
+            array = ArrayUtil.convertSetIntoArray(hashSet);
+        }
+
+        return array;
     }
 
     /**
@@ -109,6 +127,18 @@ public class ArrayUtil {
 
             return  max;
         }
+    }
+
+    public static int[] convertSetIntoArray(Set set) {
+        int[] array = new int[set.size()];
+
+        int i = 0;
+        for(Iterator iterator = set.iterator(); iterator.hasNext(); ) {
+            array[i] = (int)iterator.next();
+            i++;
+        }
+
+        return array;
     }
 
     /**

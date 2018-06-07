@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junyingli.code.enumeration.CommonEnum;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class ArrayUtilTest {
@@ -42,6 +43,14 @@ public class ArrayUtilTest {
     public void testReverse() {
         ArrayUtil.reverse(orderedArray);
         ArrayUtil.printArray(orderedArray);
+    }
+
+    @Test
+    public void testGenerateArrayWithRandomNumbers() {
+        ArrayUtil.printArray(ArrayUtil.generateArrayWithRandomNumbers(10, 20, 40, true));
+        System.out.println();
+        ArrayUtil.printArray(ArrayUtil.generateArrayWithRandomNumbers(10, 20, 40, false));
+        System.out.println();
     }
 
     @Test
