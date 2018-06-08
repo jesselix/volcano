@@ -129,6 +129,29 @@ public class ArrayUtil {
         }
     }
 
+    /**
+     *
+     * @param array
+     * @return
+     */
+    public static boolean isRepeat(int[] array) {
+        Set set = new HashSet();
+
+        for (int i = 0; i < array.length; i++) {
+            set.add(array[i]);
+            if (set.size() < i + 1) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * convert set into array
+     * @param set
+     * @return
+     */
     public static int[] convertSetIntoArray(Set set) {
         int[] array = new int[set.size()];
 

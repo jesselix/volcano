@@ -68,6 +68,15 @@ public class ArrayUtilTest {
     }
 
     @Test
+    public void testIsRepeat() {
+        int[] array1 = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] array2 = {1, 2, 3, 4, 5, 6, 5, 8};
+
+        System.out.println(ArrayUtil.isRepeat(array1));
+        System.out.println(ArrayUtil.isRepeat(array2));
+    }
+
+    @Test
     public void testConvertStringIntoArray() {
         int[] aryGG = ArrayUtil.convertStringIntoArray(strGG);
 //        ArrayUtil.printArray(aryGG);

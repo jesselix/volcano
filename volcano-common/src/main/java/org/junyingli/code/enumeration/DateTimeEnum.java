@@ -1,6 +1,6 @@
 package org.junyingli.code.enumeration;
 
-public class TimeEnum {
+public class DateTimeEnum {
 
     public enum Week {
         SUNDAY,
