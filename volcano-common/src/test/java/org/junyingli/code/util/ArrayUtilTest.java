@@ -6,6 +6,7 @@ import org.junyingli.code.enumeration.CommonEnum;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 
 public class ArrayUtilTest {
 
@@ -47,9 +48,9 @@ public class ArrayUtilTest {
 
     @Test
     public void testGenerateArrayWithRandomNumbers() {
-        ArrayUtil.printArray(ArrayUtil.generateArrayWithRandomNumbers(10, 20, 40, true));
+        ArrayUtil.printArray(Objects.requireNonNull(ArrayUtil.generateArrayWithRandomNumbers(10, 20, 40, true)));
         System.out.println();
-        ArrayUtil.printArray(ArrayUtil.generateArrayWithRandomNumbers(10, 20, 40, false));
+        ArrayUtil.printArray(Objects.requireNonNull(ArrayUtil.generateArrayWithRandomNumbers(10, 20, 40, false)));
         System.out.println();
     }
 
