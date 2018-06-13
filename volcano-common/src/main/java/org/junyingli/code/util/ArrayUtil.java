@@ -130,7 +130,7 @@ public class ArrayUtil {
     }
 
     /**
-     *
+     * is elements repeat
      * @param array
      * @return
      */
