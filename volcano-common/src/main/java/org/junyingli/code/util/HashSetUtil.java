@@ -10,4 +10,14 @@ public class HashSetUtil {
             System.out.printf("iterator: %s\n", iterator.next());
         }
     }
+
+
+    public static HashSet convertArrayIntoHashSet(int[] array) {
+        HashSet hashSet = new HashSet();
+        for (int i = 0; i < array.length; i++) {
+            hashSet.add(array[i]);
+        }
+
+        return hashSet;
+    }
 }
