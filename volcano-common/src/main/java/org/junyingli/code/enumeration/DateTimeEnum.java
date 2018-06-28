@@ -26,4 +26,11 @@ public class DateTimeEnum {
         NOVEMBER,
         DECEMBER
     }
+
+    public enum Season {
+        SPRING,
+        SUMMER,
+        AUTUMN,
+        WINTER
+    }
 }
