@@ -1,0 +1,49 @@
+package org.junyingli.code.util;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class DateTimeUtil {
+
+
+    public static int compareIgnoreSecond(Date date1, Date date2) {
+        if (date1 == null) {
+            date1 = new Date();
+        }
+
+        if (date2 == null) {
+            date2 = new Date();
+        }
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date1);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        date1 = cal.getTime();
+
+        cal.setTime(date2);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        date2 = cal.getTime();
+
+        return date1.compareTo(date2);
+    }
+
+    public static String currentDate2String() {
+        return date2String(new Date());
+    }
+
+    public static String date2String(Date date) {
+        return date2String(date, "yyyy-MM-dd HH:mm:ss.SSS");
+    }
+
+    public static String date2String(Date date, String pattern) {
+        if (date == null) {
+            return null;
+        }
+
+        return (new SimpleDateFormat(pattern)).format(date);
+    }
+
+}
