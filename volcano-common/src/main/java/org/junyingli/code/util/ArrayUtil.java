@@ -21,20 +21,6 @@ public class ArrayUtil {
     }
 
     /**
-     * print integer array
-     * @param array
-     */
-    public static void printArray(Integer[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]);
-
-            if (i < array.length - 1) {
-                System.out.print(" ");
-            }
-        }
-    }
-
-    /**
      * swap two elements
      * @param array
      * @param index1
