@@ -16,8 +16,12 @@ public class SnowflakeTest {
 
     @Test
     public void gg() {
-        String str = "0000010110110100011001111100011001110110010001000101000000000000";
+        String str = "110111100000101101101011001110100111011000111111111111111111";
         System.out.println(str.length());
+        String str2 = "543497714680201216";
+        System.out.println(str2.length());
+
+
 
         long l = 1093708051447283717L;
         System.out.println(Long.toBinaryString(l));
