@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Snowflake {
+public class SnowflakeId {
 
     /*
      * bits allocations for timeStamp, datacenterId, workerId and sequence
@@ -13,7 +13,7 @@ public class Snowflake {
     private final long unusedBits = 1L;
     /**
      * 'time stamp' here is defined as the number of millisecond that have
-     * elapsed since the {@link #epoch} given by users on {@link Snowflake}
+     * elapsed since the {@link #epoch} given by users on {@link SnowflakeId}
      * instance initialization
      */
     private final long timestampBits = 41L;
@@ -113,7 +113,7 @@ public class Snowflake {
      * @param workerId
      *            machine or process number, value range: [0,31]
      */
-    public Snowflake(long datacenterId, long workerId) {
+    public SnowflakeId(long datacenterId, long workerId) {
         if (datacenterId > maxDatacenterId || datacenterId < 0) {
             throw new IllegalArgumentException(
                     String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
@@ -163,11 +163,11 @@ public class Snowflake {
     }
 
     /**
-     * show settings of Snowflake
+     * show settings of SnowflakeId
      */
     @Override
     public String toString() {
-        return "Snowflake Settings [timestampBits=" + timestampBits + ", datacenterIdBits=" + datacenterIdBits
+        return "SnowflakeId Settings [timestampBits=" + timestampBits + ", datacenterIdBits=" + datacenterIdBits
                 + ", workerIdBits=" + workerIdBits + ", sequenceBits=" + sequenceBits + ", epoch=" + epoch
                 + ", datacenterId=" + datacenterId + ", workerId=" + workerId + "]";
     }
