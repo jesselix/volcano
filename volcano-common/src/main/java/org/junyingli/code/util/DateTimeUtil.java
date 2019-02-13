@@ -50,7 +50,7 @@ public class DateTimeUtil {
 
     public static String dateToStamp(String s) throws ParseException {
         String res;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
         Date date = simpleDateFormat.parse(s);
         long ts = date.getTime();
         res = String.valueOf(ts);
@@ -66,6 +66,16 @@ public class DateTimeUtil {
         return res;
     }
 
+    public static long timeStampNow() {
+        Date now = new Date();
+        String timestamp = String.valueOf(now.getTime());
+        return Long.valueOf(timestamp);
+    }
 
+    public static long timeStampNow2() {
+        Date now = new Date();
+        String timestamp = String.valueOf(now.getTime()/1000);
+        return Long.valueOf(timestamp);
+    }
 
 }
