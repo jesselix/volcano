@@ -23,4 +23,12 @@ public class DateTimeUtilTest {
         }
     }
 
+    @Test
+    public void testDateAfterMonths() {
+        String date = "2019-08-25";
+        String date2 = "2019-01-31";
+        System.out.println(DateTimeUtil.dateAfterMonths(date, 1));
+        System.out.println(DateTimeUtil.dateAfterMonths(date2, 1));
+    }
+
 }

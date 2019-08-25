@@ -78,4 +78,25 @@ public class DateTimeUtil {
         return Long.valueOf(timestamp);
     }
 
+    /**
+     * get the date after n months
+     * @param inputDate
+     * @param n
+     * @return
+     */
+    public static String dateAfterMonths(String inputDate, int n) {
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = sdf.parse(inputDate);
+        } catch(Exception e) {
+
+        }
+        c.setTime(date);
+        c.add(Calendar.MONTH, n);
+        String strDate = sdf.format(c.getTime());
+        return strDate;
+    }
+
 }
