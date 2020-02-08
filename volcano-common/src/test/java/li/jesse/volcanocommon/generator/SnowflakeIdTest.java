@@ -1,5 +1,7 @@
-package li.jesse.volcanocommon.util;
+package li.jesse.volcanocommon.generator;
 
+import li.jesse.volcanocommon.generator.SnowflakeId;
+import li.jesse.volcanocommon.util.BinHexUtil;
 import org.junit.Test;
 
 public class SnowflakeIdTest {
