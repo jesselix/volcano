@@ -53,7 +53,6 @@ publishing {
             artifact sourceJar {
                 classifier "sources"
             }
-
         }
     }
     repositories {
