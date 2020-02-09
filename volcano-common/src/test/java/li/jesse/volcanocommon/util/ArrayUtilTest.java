@@ -1,6 +1,6 @@
 package li.jesse.volcanocommon.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import li.jesse.volcanocommon.enumeration.CommonEnum;
 
 import java.util.ArrayList;

@@ -5,13 +5,14 @@ plugins {
 }
 
 group = 'li.jesse'
-version = '1.0.0'
+version = '0.0.1'
 sourceCompatibility = '11'
 
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
+    deployerJars
 }
 
 repositories {
@@ -21,21 +22,53 @@ repositories {
 
 def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
 
-apply plugin: 'maven'
+//apply plugin: 'maven'
+//
+//uploadArchives{
+//    repositories.mavenDeployer{
+//        repository(url: localMavenRepo)
+//        pom.groupId = "li.jesse"
+//        pom.artifactId = "volcano-common"
+//        pom.version = "0.0.1"
+//    }
+//}
 
-uploadArchives{
-    repositories.mavenDeployer{
-        // 本地仓库路径
-//        repository(url:"file://D://Users/user2/.m2/repository/")
-        repository(url: localMavenRepo)
-        // 唯一标识
-        pom.groupId = "li.jesse"
-        // 项目名称
-        pom.artifactId = "volcano-common"
-        // 版本号
-        pom.version = "1.0.0"
+apply plugin: 'maven-publish'
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            //指定group/artifact/version信息
+            groupId "li.jesse"
+            artifactId "volcano-common"
+            version "0.0.1"
+            //打包类型 war: components.web jar: components.java
+            from components.java
+
+            //配置上传源码
+            artifact sourceJar {
+                classifier "sources"
+            }
+
+        }
+    }
+    repositories {
+        maven {
+            //指定要上传的maven私服仓库
+            url = localMavenRepo
+            //认证用户和密码
+//            credentials {
+//                username 'admin'
+//                password 'maxrocky5721'
+//            }
+        }
     }
 }
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
@@ -49,8 +82,6 @@ dependencies {
     }
     testImplementation 'io.projectreactor:reactor-test'
 
-    // https://mvnrepository.com/artifact/junit/junit
-    testCompile group: 'junit', name: 'junit', version: '4.12'
 
     // *** log ***
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api

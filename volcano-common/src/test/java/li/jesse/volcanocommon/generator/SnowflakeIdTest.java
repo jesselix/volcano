@@ -2,7 +2,7 @@ package li.jesse.volcanocommon.generator;
 
 import li.jesse.volcanocommon.generator.SnowflakeId;
 import li.jesse.volcanocommon.util.BinHexUtil;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SnowflakeIdTest {
 

@@ -1,6 +1,6 @@
 package li.jesse.volcanocommon.enumeration;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CommonEnumTest {
 

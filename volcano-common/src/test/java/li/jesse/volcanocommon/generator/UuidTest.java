@@ -1,7 +1,7 @@
 package li.jesse.volcanocommon.generator;
 
 import li.jesse.volcanocommon.generator.Uuid;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class UuidTest {
 
