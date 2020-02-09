@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'li.jesse'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = '11'
 
 configurations {
@@ -15,7 +15,26 @@ configurations {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
+}
+
+def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+
+apply plugin: 'maven'
+
+uploadArchives{
+    repositories.mavenDeployer{
+        // 本地仓库路径
+//        repository(url:"file://D://Users/user2/.m2/repository/")
+        repository(url: localMavenRepo)
+        // 唯一标识
+        pom.groupId = "li.jesse"
+        // 项目名称
+        pom.artifactId = "volcano-common"
+        // 版本号
+        pom.version = "1.0.0"
+    }
 }
 
 dependencies {
