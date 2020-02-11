@@ -1,6 +1,6 @@
 package li.jesse.volcanocommon.util;
 
-import li.jesse.volcanocommon.enumeration.CommonEnum;
+import li.jesse.volcanocommon.enumeration.SimpleEnum;
 
 import java.util.*;
 
@@ -93,8 +93,8 @@ public class ArrayUtil {
      * @param minMax
      * @return
      */
-    public static int findMinMax(int[] array, CommonEnum.MinMax minMax) {
-        if (CommonEnum.MinMax.MIN.equals(minMax)) {
+    public static int findMinMax(int[] array, SimpleEnum.MinMaxEnum minMax) {
+        if (SimpleEnum.MinMaxEnum.MIN.equals(minMax)) {
             int min = array[0];
             for (int i = 1; i < array.length; i++) {
                 if (array[i] < min) {

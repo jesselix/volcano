@@ -1,8 +1,8 @@
 package li.jesse.volcanocommon.enumeration;
 
-public class CommonEnum {
+public class SimpleEnum {
 
-    public enum MinMax {
+    public enum MinMaxEnum {
         MIN,
         MAX
     }
