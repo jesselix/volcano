@@ -2,7 +2,12 @@ package li.jesse.volcanocommon.enumeration;
 
 import org.junit.jupiter.api.Test;
 
-public class WeekdayEnumTest {
+public class EnumTest {
+
+    @Test
+    public void testCommonEnum() {
+        System.out.println(SimpleEnum.MinMaxEnum.MIN + " " + SimpleEnum.MinMaxEnum.MAX);
+    }
 
     @Test
     public void testWeekdayEnum() {
