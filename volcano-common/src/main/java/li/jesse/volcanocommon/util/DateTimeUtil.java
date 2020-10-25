@@ -69,7 +69,6 @@ public class DateTimeUtil {
         String res = year + "-" + month + "-" + day;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = simpleDateFormat.parse(res);
-        System.out.println(date);
         long ts = date.getTime();
         return ts;
     }
