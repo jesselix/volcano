@@ -9,21 +9,21 @@ public class SnowflakeId {
     private final long unusedBits = 1L;
 
     private final long timestampBits = 41L;
-    private final long datacenterIdBits = 5L;
+    private final long dataCenterIdBits = 5L;
     private final long workerIdBits = 5L;
     private final long sequenceBits = 12L;
 
-    private final long maxDatacenterId = -1L ^ (-1L << datacenterIdBits); // 2^5-1
+    private final long maxDataCenterId = -1L ^ (-1L << dataCenterIdBits); // 2^5-1
     private final long maxWorkerId = -1L ^ (-1L << workerIdBits); // 2^5-1
     private final long maxSequence = -1L ^ (-1L << sequenceBits); // 2^12-1
 
-    private final long timestampShift = sequenceBits + datacenterIdBits + workerIdBits;
-    private final long datacenterIdShift = sequenceBits + workerIdBits;
+    private final long timestampShift = sequenceBits + dataCenterIdBits + workerIdBits;
+    private final long dataCenterIdShift = sequenceBits + workerIdBits;
     private final long workerIdShift = sequenceBits;
 
-    private final long epoch = 1580486400000L;
+    private final long epoch;  // 2020-10-01
 
-    private final long datacenterId;
+    private final long dataCenterId;
 
     private final long workerId;
 
@@ -53,23 +53,24 @@ public class SnowflakeId {
         lastTimestamp = currTimestamp;
 
         return ((currTimestamp - epoch) << timestampShift) |
-                (datacenterId << datacenterIdShift) |
+                (dataCenterId << dataCenterIdShift) |
                 (workerId << workerIdShift) |
                 sequence;
     }
 
-    public SnowflakeId(long datacenterId, long workerId) {
-        if (datacenterId > maxDatacenterId || datacenterId < 0) {
+    public SnowflakeId(long dataCenterId, long workerId, long epoch) {
+        if (dataCenterId > maxDataCenterId || dataCenterId < 0) {
             throw new IllegalArgumentException(
-                    String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
+                    String.format("dataCenter Id can't be greater than %d or less than 0", maxDataCenterId));
         }
         if (workerId > maxWorkerId || workerId < 0) {
             throw new IllegalArgumentException(
                     String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
         }
 
-        this.datacenterId = datacenterId;
+        this.dataCenterId = dataCenterId;
         this.workerId = workerId;
+        this.epoch = epoch;
     }
 
     private final AtomicLong waitCount = new AtomicLong(0);
@@ -92,9 +93,9 @@ public class SnowflakeId {
 
     @Override
     public String toString() {
-        return "SnowflakeId Settings [timestampBits=" + timestampBits + ", datacenterIdBits=" + datacenterIdBits
+        return "SnowflakeId Settings [timestampBits=" + timestampBits + ", dataCenterIdBits=" + dataCenterIdBits
                 + ", workerIdBits=" + workerIdBits + ", sequenceBits=" + sequenceBits + ", epoch=" + epoch
-                + ", datacenterId=" + datacenterId + ", workerId=" + workerId + "]";
+                + ", dataCenterId=" + dataCenterId + ", workerId=" + workerId + "]";
     }
 
     public long getEpoch() {
@@ -105,9 +106,9 @@ public class SnowflakeId {
         long[] arr = new long[5];
         arr[4] = ((id & diode(unusedBits, timestampBits)) >> timestampShift);
         arr[0] = arr[4] + epoch;
-        arr[1] = (id & diode(unusedBits + timestampBits, datacenterIdBits)) >> datacenterIdShift;
-        arr[2] = (id & diode(unusedBits + timestampBits + datacenterIdBits, workerIdBits)) >> workerIdShift;
-        arr[3] = (id & diode(unusedBits + timestampBits + datacenterIdBits + workerIdBits, sequenceBits));
+        arr[1] = (id & diode(unusedBits + timestampBits, dataCenterIdBits)) >> dataCenterIdShift;
+        arr[2] = (id & diode(unusedBits + timestampBits + dataCenterIdBits, workerIdBits)) >> workerIdShift;
+        arr[3] = (id & diode(unusedBits + timestampBits + dataCenterIdBits + workerIdBits, sequenceBits));
         return arr;
     }
 

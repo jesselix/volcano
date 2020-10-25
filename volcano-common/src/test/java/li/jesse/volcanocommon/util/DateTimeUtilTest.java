@@ -13,9 +13,18 @@ public class DateTimeUtilTest {
     }
 
     @Test
+    public void testDateStringToStamp() {
+        try {
+            System.out.println(DateTimeUtil.dateStringToStamp("2056-01-01 08:00:00:111"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void testDateToStamp() {
         try {
-            System.out.println(DateTimeUtil.dateToStamp("2056-01-01 08:00:00:111"));
+            System.out.println(DateTimeUtil.dateToStamp(2020, 10, 1));
         } catch (ParseException e) {
             e.printStackTrace();
         }

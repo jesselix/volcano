@@ -47,7 +47,7 @@ public class DateTimeUtil {
         return (new SimpleDateFormat(pattern)).format(date);
     }
 
-    public static String dateToStamp(String s) throws ParseException {
+    public static String dateStringToStamp(String s) throws ParseException {
         String res;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
         Date date = simpleDateFormat.parse(s);
@@ -56,13 +56,22 @@ public class DateTimeUtil {
         return res;
     }
 
-    public static String stampToDate(String s) {
+    public static String stampToDateString(String s) {
         String res;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         long lt = Long.valueOf(s);
         Date date = new Date(lt);
         res = simpleDateFormat.format(date);
         return res;
+    }
+
+    public static long dateToStamp(int year, int month, int day) throws ParseException {
+        String res = year + "-" + month + "-" + day;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = simpleDateFormat.parse(res);
+        System.out.println(date);
+        long ts = date.getTime();
+        return ts;
     }
 
     public static long timeStampNow() {
