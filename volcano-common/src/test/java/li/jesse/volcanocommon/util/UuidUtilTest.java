@@ -1,14 +1,13 @@
-package li.jesse.volcanocommon.generator;
+package li.jesse.volcanocommon.util;
 
-import li.jesse.volcanocommon.generator.Uuid;
 import org.junit.jupiter.api.Test;
 
-public class UuidTest {
+public class UuidUtilTest {
 
     @Test
     public void testUuid() {
         for (int i = 0; i < 5; i++) {
-            System.out.println(Uuid.nextUuid());
+            System.out.println(UuidUtil.uuidGenerator());
         }
     }
 

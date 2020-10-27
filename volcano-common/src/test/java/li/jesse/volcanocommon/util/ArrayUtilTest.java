@@ -1,7 +1,6 @@
 package li.jesse.volcanocommon.util;
 
 import org.junit.jupiter.api.Test;
-import li.jesse.volcanocommon.enumeration.SimpleEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,11 +60,11 @@ public class ArrayUtilTest {
         System.out.println();
     }
 
-    @Test
-    public void testFindMinMax() {
-        System.out.println(ArrayUtil.findMinMax(randomArray, SimpleEnum.MinMaxEnum.MIN));
-        System.out.println(ArrayUtil.findMinMax(randomArray, SimpleEnum.MinMaxEnum.MAX));
-    }
+//    @Test
+//    public void testFindMinMax() {
+//        System.out.println(ArrayUtil.findMinMax(randomArray, SimpleEnum.MinMaxEnum.MIN));
+//        System.out.println(ArrayUtil.findMinMax(randomArray, SimpleEnum.MinMaxEnum.MAX));
+//    }
 
     @Test
     public void testIsRepeat() {

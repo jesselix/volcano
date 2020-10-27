@@ -1,10 +1,11 @@
-package li.jesse.volcanocommon.generator;
+package li.jesse.volcanocommon.util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SnowflakeId {
+public class SnowflakeIdUtil {
 
     private final long unusedBits = 1L;
 
@@ -58,7 +59,7 @@ public class SnowflakeId {
                 sequence;
     }
 
-    public SnowflakeId(long dataCenterId, long workerId, long epoch) {
+    public SnowflakeIdUtil(long dataCenterId, long workerId, long epoch) {
         if (dataCenterId > maxDataCenterId || dataCenterId < 0) {
             throw new IllegalArgumentException(
                     String.format("dataCenter Id can't be greater than %d or less than 0", maxDataCenterId));
@@ -122,5 +123,11 @@ public class SnowflakeId {
         int lb = (int) (64 - offset);
         int rb = (int) (64 - (offset + length));
         return (-1L << lb) ^ (-1L << rb);
+    }
+
+    public static long snowflakeIdGenerator(int year, int month, int day, long dateCenterId, long workerId) throws ParseException {
+        long epoch = DateTimeUtil.dateToStamp(year, month, day);
+        SnowflakeIdUtil snowflakeIdUtil = new SnowflakeIdUtil(dateCenterId, workerId, epoch);
+        return snowflakeIdUtil.nextId();
     }
 }

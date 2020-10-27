@@ -1,10 +1,10 @@
-package li.jesse.volcanocommon.generator;
+package li.jesse.volcanocommon.util;
 
 import java.util.UUID;
 
-public class Uuid {
+public class UuidUtil {
 
-    public static String nextUuid() {
+    public static String uuidGenerator() {
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         return uuid;
     }

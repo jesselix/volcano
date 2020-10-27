@@ -1,7 +1,5 @@
 package li.jesse.volcanocommon.util;
 
-import li.jesse.volcanocommon.enumeration.SimpleEnum;
-
 import java.util.*;
 
 public class ArrayUtil {
@@ -93,27 +91,27 @@ public class ArrayUtil {
      * @param minMax
      * @return
      */
-    public static int findMinMax(int[] array, SimpleEnum.MinMaxEnum minMax) {
-        if (SimpleEnum.MinMaxEnum.MIN.equals(minMax)) {
-            int min = array[0];
-            for (int i = 1; i < array.length; i++) {
-                if (array[i] < min) {
-                    min = array[i];
-                }
-            }
-
-            return min;
-        } else {
-            int max = array[0];
-            for (int i = 1; i < array.length; i++) {
-                if (array[i] > max) {
-                    max = array[i];
-                }
-            }
-
-            return  max;
-        }
-    }
+//    public static int findMinMax(int[] array, SimpleEnum.MinMaxEnum minMax) {
+//        if (SimpleEnum.MinMaxEnum.MIN.equals(minMax)) {
+//            int min = array[0];
+//            for (int i = 1; i < array.length; i++) {
+//                if (array[i] < min) {
+//                    min = array[i];
+//                }
+//            }
+//
+//            return min;
+//        } else {
+//            int max = array[0];
+//            for (int i = 1; i < array.length; i++) {
+//                if (array[i] > max) {
+//                    max = array[i];
+//                }
+//            }
+//
+//            return  max;
+//        }
+//    }
 
     /**
      * is elements repeat
