@@ -6,15 +6,15 @@ import java.util.ArrayList;
 
 public class ArrayListUtilTest {
 
-    ArrayList<Integer> al = new ArrayList<>();
+    ArrayList<Integer> array1 = new ArrayList<>();
 
     {
-        al.add(0);
-        al.add(1);
+        array1.add(0);
+        array1.add(1);
     }
 
     @Test
     public void testIteratorArrayList() {
-        ArrayListUtil.printArrayList(al);
+        ArrayListUtil.printArrayList(array1);
     }
 }
