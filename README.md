@@ -4,8 +4,7 @@ Library for Java Development
 # Projects
 | Project | Description | 
 | --- | --- | 
-| volcano-common | Universal Common Libraries |
+| volcano | Multifunction Libraries |
 
 # Development Environment
 Language: Java  
-IDE: IntelliJ IDEA

@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>li.jesse</groupId>
-  <artifactId>volcano-common</artifactId>
+  <artifactId>volcano</artifactId>
   <version>0.0.1</version>
 
-  <name>volcano-common</name>
+  <name>volcano</name>
   <url>https://github.com/jesselix/volcano</url>
 
   <properties>
