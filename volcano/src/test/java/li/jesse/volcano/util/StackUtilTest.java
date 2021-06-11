@@ -1,0 +1,4 @@
+package li.jesse.volcano.util;
+
+public class StackUtilTest {
+}
