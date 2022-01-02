@@ -14,7 +14,7 @@ public class PhotographyUtil {
      */
     public static int timeLapseCalculator(Integer shutterInterval, Integer recordingTime, Integer finalVideoLength, Integer frameRate) {
         // shutter interval = recording time / (final video length * frame rate)
-        // Time unit is second. Frame rate unit is fps
+        // e.g. 4s = 7200s / (60s * 30fps)
         if (frameRate == null) {
             return 0;
         }
