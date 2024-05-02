@@ -11,7 +11,12 @@ public class PhotographyUtilTest {
         Integer finalVideoLength = 60;
         Integer frameRate = 30;
 
-        System.out.println(PhotographyUtil.timeLapseCalculator(4, null, 60, 30));
-        System.out.println(PhotographyUtil.timeLapseCalculator(3, null, 60, 30));
+//        System.out.println(PhotographyUtil.timeLapseCalculator(1, 3600, null, 30));
+//        System.out.println(PhotographyUtil.timeLapseCalculator(4, null, 60, 30));
+//        System.out.println(PhotographyUtil.timeLapseCalculator(3, null, 60, 30));
+
+        System.out.println(PhotographyUtil.timeLapseCalculator(4, 6648, null, 30));
+
+        System.out.println(PhotographyUtil.timeLapseCalculator(2, 3600, null, 60));
     }
 }
