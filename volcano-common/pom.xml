@@ -7,8 +7,8 @@
   <groupId>li.jesse</groupId>
   <artifactId>volcano-common</artifactId>
   <version>0.0.1</version>
-  <name>Algorithms Primer</name>
-  <description>volcano-common</description>
+  <name>volcano-common</name>
+  <description>Volcano Common</description>
   <url>https://github.com/jesselix/volcano</url>
 
   <properties>
@@ -22,7 +22,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>6.0.0-M1</version>
+      <version>5.13.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
